@@ -18,7 +18,11 @@ module.exports = class Login {
       if (!user) return Promise.resolve();
 
       user.lastLogin = Date.now();
-
+      console.log('in this checking email');
+      console.log(this.adminUsers);
+      console.log(user.email);
+      console.log(this.adminUsers.includes(user.email));
+      console.log('done');
       if (this.adminUsers.includes(user.email)) {
         user.isAdmin = true;
       }
